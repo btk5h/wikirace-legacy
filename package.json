@@ -17,7 +17,6 @@
     "babel-core": "^6.21.0",
     "babel-loader": "^6.2.10",
     "babel-preset-react-app": "^2.0.1",
-    "browser-sync": "^2.18.5",
     "css-loader": "^0.26.1",
     "postcss-cssnext": "^2.9.0",
     "postcss-loader": "^1.2.1",
