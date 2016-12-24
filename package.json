@@ -1,0 +1,36 @@
+{
+  "name": "wikirace",
+  "version": "0.0.0-SNAPSHOT",
+  "main": "index.js",
+  "repository": {
+    "url": "btk5h/wikirace",
+    "type": "git"
+  },
+  "scripts": {
+    "build": "NODE_ENV=production webpack",
+    "build-dev": "NODE_ENV=development webpack",
+    "serve": "NODE_ENV=development webpack-dev-server",
+    "serve-prod": "NODE_ENV=production webpack-dev-server"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "babel-core": "^6.21.0",
+    "babel-loader": "^6.2.10",
+    "babel-preset-react-app": "^2.0.1",
+    "browser-sync": "^2.18.5",
+    "css-loader": "^0.26.1",
+    "postcss-cssnext": "^2.9.0",
+    "postcss-loader": "^1.2.1",
+    "style-loader": "^0.13.1",
+    "webpack": "^1.14.0",
+    "webpack-dev-server": "^1.16.2"
+  },
+  "dependencies": {
+    "babel-polyfill": "^6.20.0",
+    "lodash": "^4.17.2",
+    "normalize.css": "^5.0.0",
+    "preact": "^7.1.0",
+    "smoothscroll-polyfill": "^0.3.4",
+    "whatwg-fetch": "^2.0.1"
+  }
+}

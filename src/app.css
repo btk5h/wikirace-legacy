@@ -1,0 +1,17 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+
+* {
+  font-family: 'Roboto', sans-serif !important;
+}
+
+.wr-active-lorange:active {
+  background-color: #ffd180 !important;
+}
+
+.wr-hover-underline:hover {
+  text-decoration: underline;
+}
+
+::placeholder {
+  color: rgba(50, 50, 50, 0.5)
+}
