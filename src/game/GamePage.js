@@ -11,7 +11,9 @@ export default class GamePage extends Component {
     super()
     this.handleNavigate = this.handleNavigate.bind(this)
 
-    this.state.clicks = -1
+    this.state = {
+      path: []
+    }
   }
 
   componentDidMount () {
@@ -26,15 +28,21 @@ export default class GamePage extends Component {
       this.anchor.scrollIntoView()
       this.setState({
         html,
-        title,
-        clicks: this.state.clicks + 1
+        title
       })
+
+      // currentTitle is set after the first page has loaded
+      if (currentTitle) {
+        this.setState({
+          path: [...path, title]
+        })
+      }
     } else {
       console.warn(`Skipping ${title}`)
     }
   }
 
-  render ({from, to}, {html, title, clicks}) {
+  render ({from, to}, {html, title, path}) {
     return (
       <div style={{
         maxHeight: '100vh'
@@ -65,7 +73,7 @@ export default class GamePage extends Component {
               transform: 'translateY(-50%)',
               marginRight: '2vw'
             }}>
-              {clicks} click{clicks === 1 ? '' : 's'}
+              {path.length} click{path.length === 1 ? '' : 's'}
             </div>
           </div>
         </nav>
