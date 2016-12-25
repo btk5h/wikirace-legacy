@@ -34,7 +34,7 @@ export default class GamePage extends Component {
       // currentTitle is set after the first page has loaded
       if (currentTitle) {
         this.setState({
-          path: [...path, title]
+          path: [...this.state.path, title]
         })
       }
     } else {
