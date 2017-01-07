@@ -45,7 +45,7 @@ export default class GamePage extends Component {
           backgroundColor: '#4dd0e1',
           height: '7.5vh',
           fontSize: '2.5vh',
-          width: '100vw',
+          width: '100vw'
         }}>
           <div style={{
             position: 'absolute',
@@ -76,12 +76,12 @@ export default class GamePage extends Component {
           maxWidth: '100vw',
           overflow: 'scroll'
         }}>
-          <div ref={anchor => this.anchor = anchor}
-               style={{
-                 marginBottom: '2.5vh'
-               }} />
+          <div ref={anchor => (this.anchor = anchor)}
+            style={{
+              marginBottom: '2.5vh'
+            }} />
           <WikiFrame html={html}
-                     onNavigate={this.handleNavigate} />
+            onNavigate={this.handleNavigate} />
         </div>
       </div>
     )

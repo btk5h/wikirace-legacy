@@ -15,7 +15,7 @@ export default class App extends Component {
     this.setState({from, to})
   }
 
-  render ({}, {from, to}) {
+  render (props, {from, to}) {
     if (!(from && to)) {
       return <MenuPage onGameStart={this.handleGameStart} />
     } else {

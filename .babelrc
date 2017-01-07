@@ -12,6 +12,7 @@
       "pragma": "h",
       "useBuiltIns": true
     }],
+    "transform-runtime",
     ["transform-regenerator", {
       "async": false
     }]
