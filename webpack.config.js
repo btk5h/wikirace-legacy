@@ -49,6 +49,13 @@ module.exports = {
     path: './dist'
   },
   module: {
+    preLoaders: [
+      {
+        test: /\.js$/,
+        exclude: /node_modules/,
+        loaders: ['standard']
+      }
+    ],
     loaders: [
       {
         test: /\.js$/,
