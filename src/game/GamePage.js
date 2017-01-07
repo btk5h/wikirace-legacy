@@ -58,7 +58,7 @@ export default class GamePage extends Component {
               left: '50%',
               transform: 'translate(-50%, -50%)',
               textAlign: 'center'
-            }}>{from} &#9654; {title || '¯\\_(ツ)_/¯'} &#9654; {to}</div>
+            }}>{from} &#9658; {title || '¯\\_(ツ)_/¯'} &#9658; {to}</div>
             <div style={{
               position: 'absolute',
               right: 0,
