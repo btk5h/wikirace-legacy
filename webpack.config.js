@@ -40,6 +40,7 @@ if (isProduction) {
 
 module.exports = {
   entry: [
+    'regenerator-runtime/runtime',
     'whatwg-fetch',
     './src/index.js'
   ],
