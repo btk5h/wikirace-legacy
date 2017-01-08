@@ -8,7 +8,7 @@ import smoothScrollPolyfill from 'smoothscroll-polyfill'
 
 smoothScrollPolyfill.polyfill()
 
-import 'normalize.css/normalize.css'
+import 'frow/css/frow.css'
 
 import './app.css'
 import './wikimedia-common.css'

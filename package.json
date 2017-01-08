@@ -42,8 +42,9 @@
     "webpack-fail-plugin": "^1.0.5"
   },
   "dependencies": {
+    "css.escape": "^1.5.1",
+    "frow": "^1.4.6",
     "lodash": "^4.17.2",
-    "normalize.css": "^5.0.0",
     "preact": "^7.1.0",
     "regenerator-runtime": "^0.10.1",
     "smoothscroll-polyfill": "^0.3.4",

@@ -41,6 +41,7 @@ if (isProduction) {
 module.exports = {
   entry: [
     'regenerator-runtime/runtime',
+    'css.escape',
     'whatwg-fetch',
     './src/index.js'
   ],
