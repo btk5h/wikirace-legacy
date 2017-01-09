@@ -18,7 +18,7 @@ function buildURI (uri, params) {
 }
 
 export async function search (title, api = DEFAULT_WIKI) {
-  let raw = await fetch(buildURI(api, {
+  let raw = await window.fetch(buildURI(api, {
     ...DEFAULT_QUERY,
     action: 'query',
     list: 'search',
@@ -37,7 +37,7 @@ export async function search (title, api = DEFAULT_WIKI) {
 }
 
 export async function parse (title, api = DEFAULT_WIKI) {
-  let raw = await fetch(buildURI(api, {
+  let raw = await window.fetch(buildURI(api, {
     ...DEFAULT_QUERY,
     action: 'parse',
     page: title,
@@ -57,7 +57,7 @@ export async function parse (title, api = DEFAULT_WIKI) {
 }
 
 export async function random (count, api = DEFAULT_WIKI) {
-  let raw = await fetch(buildURI(api, {
+  let raw = await window.fetch(buildURI(api, {
     ...DEFAULT_QUERY,
     action: 'query',
     list: 'random',

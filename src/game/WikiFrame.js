@@ -30,11 +30,9 @@ export default class WikiFrame extends Component {
           if (el) {
             el.scrollIntoView({behavior: 'smooth'})
           }
-        } else if (!(classList.contains('extiw')
-          || classList.contains('external')
-          || classList.contains('new'))
-          && title) {
-
+        } else if (!(classList.contains('extiw') ||
+          classList.contains('external') ||
+          classList.contains('new')) && title) {
           let onNavigate = this.props.onNavigate
 
           if (onNavigate) {
@@ -50,7 +48,7 @@ export default class WikiFrame extends Component {
   render ({html, style}) {
     return (
       <article dangerouslySetInnerHTML={{__html: html}}
-               onClick={this.handleClick} />
+        onClick={this.handleClick} />
     )
   }
 }

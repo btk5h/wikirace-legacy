@@ -38,7 +38,7 @@ export default class MenuPage extends Component {
     }
   }
 
-  render ({}, {from, to}) {
+  render (props, {from, to}) {
     return (
       <div style={{
         backgroundColor: '#4dd0e1',
@@ -53,23 +53,23 @@ export default class MenuPage extends Component {
           textAlign: 'center'
         }}>
           <ExpandingInput placeholder='Starting Page'
-                          value={from}
-                          onInput={this.linkState('from')}
-                          style={INPUT_STYLE}
-                          spellCheck='false' />
+            value={from}
+            onInput={this.linkState('from')}
+            style={INPUT_STYLE}
+            spellCheck='false' />
           <span onClick={this.setRandomPages}
-                class='wr-hover-underline'
-                style={{
-                  color: '#ffffff',
-                  cursor: 'pointer',
-                  fontSize: '7.5vh'
-                }}>to</span>
+            class='wr-hover-underline'
+            style={{
+              color: '#ffffff',
+              cursor: 'pointer',
+              fontSize: '7.5vh'
+            }}>to</span>
           <ExpandingInput placeholder='Ending Page'
-                          value={to}
-                          onInput={this.linkState('to')}
-                          onChange={e => console.log(e.target.value)}
-                          style={INPUT_STYLE}
-                          spellCheck='false' />
+            value={to}
+            onInput={this.linkState('to')}
+            onChange={e => console.log(e.target.value)}
+            style={INPUT_STYLE}
+            spellCheck='false' />
         </div>
         <div style={{
           position: 'absolute',
@@ -78,17 +78,17 @@ export default class MenuPage extends Component {
           transform: 'translate(-50%, -50%)',
           paddingBottom: '5vh'
         }}>
-          <button class="wr-active-lorange"
-                  style={{
-                    cursor: 'pointer',
-                    fontSize: '5vh',
-                    padding: '1vh',
-                    color: '#ffffff',
-                    backgroundColor: '#ffab40',
-                    border: 0,
-                    outline: 'none'
-                  }}
-                  onClick={this.handleClick}>Race!
+          <button class='wr-active-lorange'
+            style={{
+              cursor: 'pointer',
+              fontSize: '5vh',
+              padding: '1vh',
+              color: '#ffffff',
+              backgroundColor: '#ffab40',
+              border: 0,
+              outline: 'none'
+            }}
+            onClick={this.handleClick}>Race!
           </button>
         </div>
       </div>

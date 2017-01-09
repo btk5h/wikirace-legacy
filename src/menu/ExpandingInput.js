@@ -27,24 +27,24 @@ export default class ExpandingInput extends Component {
     return (
       <div>
         <input {...otherProps}
-               ref={input => this.input = input}
-               placeholder={placeholder}
-               value={value}
-               style={{
-                 ...style,
-                 width
-               }} />
-        <div ref={sizer => this.sizer = sizer}
-             style={{
-               font,
-               position: 'absolute',
-               top: 0,
-               left: 0,
-               visibility: 'hidden',
-               height: 0,
-               overflow: 'scroll',
-               whiteSpace: 'pre'
-             }}>
+          ref={input => (this.input = input)}
+          placeholder={placeholder}
+          value={value}
+          style={{
+            ...style,
+            width
+          }} />
+        <div ref={sizer => (this.sizer = sizer)}
+          style={{
+            font,
+            position: 'absolute',
+            top: 0,
+            left: 0,
+            visibility: 'hidden',
+            height: 0,
+            overflow: 'scroll',
+            whiteSpace: 'pre'
+          }}>
           {value || placeholder}
         </div>
       </div>
