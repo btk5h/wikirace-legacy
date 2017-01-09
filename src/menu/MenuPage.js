@@ -11,6 +11,7 @@ const INPUT_STYLE = {
   fontSize: '10vh',
   color: '#ffffff',
   backgroundColor: 'transparent',
+  margin: 0,
   border: 0,
   boxSizing: 'content-box',
   outline: 'none'
@@ -43,15 +44,10 @@ export default class MenuPage extends Component {
       <div style={{
         backgroundColor: '#4dd0e1',
         height: '100vh',
-        width: '100vw'
+        width: '100vw',
+        overflow: 'hidden'
       }}>
-        <div style={{
-          position: 'absolute',
-          top: '50%',
-          left: '50%',
-          transform: 'translate(-50%, -50%)',
-          textAlign: 'center'
-        }}>
+        <div class='frow centered-column'>
           <ExpandingInput placeholder='Starting Page'
             value={from}
             onInput={this.linkState('from')}
@@ -70,18 +66,11 @@ export default class MenuPage extends Component {
             onChange={e => console.log(e.target.value)}
             style={INPUT_STYLE}
             spellCheck='false' />
-        </div>
-        <div style={{
-          position: 'absolute',
-          bottom: 0,
-          left: '50%',
-          transform: 'translate(-50%, -50%)',
-          paddingBottom: '5vh'
-        }}>
           <button class='wr-active-lorange'
             style={{
               cursor: 'pointer',
               fontSize: '5vh',
+              marginTop: '10vh',
               padding: '1vh',
               color: '#ffffff',
               backgroundColor: '#ffab40',
