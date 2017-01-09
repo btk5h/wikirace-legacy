@@ -5,6 +5,7 @@ import {h, Component} from 'preact'
 import {parse} from '../wikipedia'
 
 import WikiFrame from './WikiFrame'
+import InfoText from './InfoText'
 
 export default class GamePage extends Component {
   constructor () {
@@ -47,24 +48,12 @@ export default class GamePage extends Component {
           fontSize: '2.5vh',
           width: '100vw'
         }}>
-          <div style={{
-            position: 'absolute',
-            top: '50%',
-            transform: 'translateY(-50%)',
-            width: '100vw'
-          }}>
-            <div style={{
-              position: 'absolute',
-              left: '50%',
-              transform: 'translate(-50%, -50%)',
-              textAlign: 'center'
-            }}>{from} &#9658; {title || '¯\\_(ツ)_/¯'} &#9658; {to}</div>
-            <div style={{
-              position: 'absolute',
-              right: 0,
-              transform: 'translateY(-50%)',
-              marginRight: '2vw'
-            }}>
+          <div class='frow centered justify-between'>
+            <div />
+            <div>
+              <InfoText id='wr-pos' content={`${from} ► ${title || '¯\\_(ツ)_/¯'} ► ${to}`} />
+            </div>
+            <div>
               {clicks} click{clicks === 1 ? '' : 's'}
             </div>
           </div>
@@ -80,8 +69,10 @@ export default class GamePage extends Component {
             style={{
               marginBottom: '2.5vh'
             }} />
-          <WikiFrame html={html}
-            onNavigate={this.handleNavigate} />
+          <div class='frow-container'>
+            <WikiFrame html={html}
+              onNavigate={this.handleNavigate} />
+          </div>
         </div>
       </div>
     )
