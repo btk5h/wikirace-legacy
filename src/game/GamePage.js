@@ -62,7 +62,7 @@ export default class GamePage extends Component {
               <InfoText id='wr-pos' content={`${from} ► ${title || '¯\\_(ツ)_/¯'} ► ${to}`} />
             </div>
             <div>
-              {path.length} click{paths.length === 1 ? '' : 's'}
+              {path.length} click{path.length === 1 ? '' : 's'}
             </div>
           </div>
         </nav>
