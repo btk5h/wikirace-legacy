@@ -1,6 +1,7 @@
-node_modules/
-dist/
-reports/
-*.log
-*.iml
 .idea/
+*.iml
+dist/
+stats/
+node_modules/
+*.log
+.netlify

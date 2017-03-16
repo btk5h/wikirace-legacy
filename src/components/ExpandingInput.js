@@ -1,10 +1,17 @@
-/** @jsx h */
-
-import {h, Component} from 'preact'
+import {Component} from 'preact'
 
 export default class ExpandingInput extends Component {
-  updateComputedFont () {
-    this.setState({font: window.getComputedStyle(this.input).font})
+  updateInheritedStyle () {
+    // This won't work; Firefox does not compute font shorthand
+    // this.setState({font: window.getComputedStyle(this.input).font})
+    let computed = window.getComputedStyle(this.input)
+
+    this.setState({
+      inherited: {
+        fontFamily: computed.fontFamily,
+        fontSize: computed.fontSize
+      }
+    })
   }
 
   updateInputWidth () {
@@ -15,7 +22,7 @@ export default class ExpandingInput extends Component {
   }
 
   componentDidMount () {
-    this.updateComputedFont()
+    this.updateInheritedStyle()
     this.updateInputWidth()
   }
 
@@ -23,12 +30,18 @@ export default class ExpandingInput extends Component {
     this.updateInputWidth()
   }
 
-  render ({value, placeholder, style, ...otherProps}, {width, font}) {
+  handleInput = e => {
+    this.props.onInput(e)
+    this.updateInputWidth()
+  }
+
+  render ({value, placeholder, style, ...otherProps}, {width, inherited}) {
     return (
       <div>
         <input {...otherProps}
           ref={input => (this.input = input)}
           placeholder={placeholder}
+          onInput={this.handleInput}
           value={value}
           style={{
             ...style,
@@ -36,12 +49,13 @@ export default class ExpandingInput extends Component {
           }} />
         <div ref={sizer => (this.sizer = sizer)}
           style={{
-            font,
+            ...inherited,
             position: 'absolute',
             top: 0,
             left: 0,
             visibility: 'hidden',
             height: 0,
+            paddingRight: 1,
             overflow: 'scroll',
             whiteSpace: 'pre'
           }}>

@@ -1,0 +1,98 @@
+a[__wr_href]:hover {
+  text-decoration: underline;
+}
+
+a {
+  color: #0645ad;
+}
+
+a[__wr_href^='#'] {
+  color: #007767;
+}
+
+a[__wr_href] {
+  cursor: pointer;
+  text-decoration: none;
+}
+
+a.new,
+a.external,
+a.internal,
+a.extiw,
+a[title^='Talk:'],
+a[title^='User:'],
+a[title^='Wikipedia:'],
+a[title^='File:'],
+a[title^='MediaWiki:'],
+a[title^='Template:'],
+a[title^='Help:'],
+a[title^='Category:'],
+a[title^='Portal:'],
+a[title^='Book:'],
+a[title^='Draft:'],
+a[title^='Educational Program:'],
+a[title^='TimedText:'],
+a[title^='Module:'],
+a[title^='User talk:'],
+a[title^='Wikipedia talk:'],
+a[title^='File talk:'],
+a[title^='MediaWiki talk:'],
+a[title^='Template talk:'],
+a[title^='Help talk:'],
+a[title^='Category talk:'],
+a[title^='Portal talk:'],
+a[title^='Book talk:'],
+a[title^='Draft talk:'],
+a[title^='Educational Program talk:'],
+a[title^='TimedText talk:'],
+a[title^='Module talk:'],
+a[title^='Special:'],
+a[title^='Media:'] {
+  color: #ba0009;
+}
+
+.hatnote[style='color:red'] {
+  display: none;
+}
+
+.thumbinner {
+  border: 1px solid #c8ccd1;
+  padding: 3px;
+  background-color: #f8f9fa;
+  font-size: 94%;
+  text-align: center;
+  overflow: hidden
+}
+
+@media (min-width: 600px) {
+  .tright,
+  .floatright {
+    float: right;
+    clear: right;
+  }
+
+  .floatleft {
+    float: left;
+    clear: left;
+  }
+
+  .tright {
+    margin: .5em 0 1.3em 1.4em;
+  }
+}
+
+.toc ul {
+  list-style-type: none;
+}
+
+.toc > ul {
+  padding: 0;
+}
+
+.tocnumber {
+  color: black;
+}
+
+pre {
+  margin: 0;
+}
