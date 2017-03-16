@@ -1,5 +1,4 @@
-import map from 'lodash/map'
-import get from 'lodash/get'
+import {buildURI} from './url'
 
 const DEFAULT_WIKI = 'https://en.wikipedia.org/w/api.php'
 
@@ -13,9 +12,39 @@ const DEFAULT_HEADERS = {
   'Api-User-Agent': 'Wikirace/0.0.0-SNAPSHOT'
 }
 
-function buildURI (uri, params) {
-  return `${uri}?${map(params, (val, key) => `${key}=${encodeURIComponent(val)}`).join('&')}`
+function getOrNull (obj, ...keys) {
+  // safely find a key within an object or return null in the most unreadable way possible
+  for (let key of keys) {
+    if (!(obj && (obj = obj[key]))) {
+      return null
+    }
+  }
+  return obj
 }
+
+const STANDARD_NAMESPACES = [
+  'User',
+  'Wikipedia',
+  'File',
+  'MediaWiki',
+  'Template',
+  'Help',
+  'Category',
+  'Portal',
+  'Book',
+  'Draft',
+  'Educational Program',
+  'TimedText',
+  'Module'
+]
+
+export const NAMESPACES = new Set([
+  'Talk',
+  ...STANDARD_NAMESPACES,
+  ...(STANDARD_NAMESPACES.map(ns => `${ns} talk`)),
+  'Special',
+  'Media'
+])
 
 export async function search (title, api = DEFAULT_WIKI) {
   let raw = await window.fetch(buildURI(api, {
@@ -33,7 +62,7 @@ export async function search (title, api = DEFAULT_WIKI) {
     }
   })
   let resp = await raw.json()
-  return get(resp, 'query.search[0].title')
+  return getOrNull(resp, 'query', 'search', 0, 'title')
 }
 
 export async function parse (title, api = DEFAULT_WIKI) {
@@ -51,8 +80,8 @@ export async function parse (title, api = DEFAULT_WIKI) {
   })
   let resp = await raw.json()
   return {
-    title: get(resp, 'parse.title'),
-    html: get(resp, 'parse.text.*')
+    title: getOrNull(resp, 'parse', 'title'),
+    html: getOrNull(resp, 'parse', 'text', '*')
   }
 }
 
@@ -70,6 +99,5 @@ export async function random (count, api = DEFAULT_WIKI) {
     }
   })
   let resp = await raw.json()
-  return get(resp, 'query.random').map(e => e.title)
+  return getOrNull(resp, 'query', 'random').map(e => e.title)
 }
-

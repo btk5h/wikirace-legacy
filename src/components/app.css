@@ -1,0 +1,107 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto|Roboto+Mono');
+
+* {
+  font-family: 'Roboto', sans-serif !important;
+}
+
+html {
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+}
+
+body {
+  color: #252525;
+  line-height: 1.4;
+  width: 100vw;
+  max-width: 100%;
+  height: 100%;
+  overflow: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+label input {
+  margin-right: 10px;
+}
+
+.wr-active-lorange:active {
+  background-color: #ffd180 !important;
+}
+
+.wr-hover-underline:hover {
+  text-decoration: underline;
+}
+
+.wr-loadingbar {
+  position: relative;
+  height: 0.25em;
+  display: block;
+  width: 100%;
+  background-color: color(#3f51b5 lightness(80%));
+  overflow: hidden;
+}
+
+.wr-loadingbar div {
+  background-color: #3f51b5;
+}
+
+.wr-loadingbar div::before {
+  content: '';
+  position: absolute;
+  background-color: inherit;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  will-change: left, right;
+  animation: indeterminate 2.1s cubic-bezier(0.65, 0.815, 0.735, 0.395) infinite;
+}
+
+.wr-loadingbar div::after {
+  content: '';
+  position: absolute;
+  background-color: inherit;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  will-change: left, right;
+  animation: indeterminate-short 2.1s cubic-bezier(0.165, 0.84, 0.44, 1) infinite;
+  animation-delay: 1.15s;
+}
+
+@keyframes indeterminate {
+  0% {
+    left: -35%;
+    right: 100%;
+  }
+
+  60% {
+    left: 100%;
+    right: -90%;
+  }
+
+  100% {
+    left: 100%;
+    right: -90%;
+  }
+}
+
+@keyframes indeterminate-short {
+  0% {
+    left: -200%;
+    right: 100%;
+  }
+
+  60% {
+    left: 107%;
+    right: -8%;
+  }
+
+  100% {
+    left: 107%;
+    right: -8%;
+  }
+}
+
+::placeholder {
+  color: rgba(50, 50, 50, 0.5)
+}
