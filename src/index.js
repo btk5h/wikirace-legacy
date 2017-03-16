@@ -1,5 +1,3 @@
-/** @jsx h */
-
 import {render} from 'preact'
 import {Provider} from 'preact-redux'
 import Helmet from 'preact-helmet'
